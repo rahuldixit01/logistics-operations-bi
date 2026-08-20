@@ -1,0 +1,15 @@
+keys,duplicate_key_rows,null_key_rows,table
+customer_id,0,0,customers
+event_id,0,0,delivery_events
+"driver_id, month",0,0,driver_monthly_metrics
+driver_id,0,0,drivers
+facility_id,0,0,facilities
+fuel_purchase_id,0,0,fuel_purchases
+load_id,0,0,loads
+maintenance_id,0,0,maintenance_records
+route_id,0,0,routes
+incident_id,0,0,safety_incidents
+trailer_id,0,0,trailers
+trip_id,0,0,trips
+"truck_id, month",0,0,truck_utilization_metrics
+truck_id,0,0,trucks

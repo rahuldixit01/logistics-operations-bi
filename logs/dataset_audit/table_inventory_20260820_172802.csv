@@ -1,0 +1,15 @@
+table,rows,columns,classification
+customers,200,8,Dimension
+delivery_events,170820,11,Fact / Event
+driver_monthly_metrics,4464,9,Supporting Aggregate
+drivers,150,12,Dimension
+facilities,50,9,Dimension
+fuel_purchases,196442,11,Fact
+loads,85410,12,Fact
+maintenance_records,2920,12,Fact / Event
+routes,58,9,Dimension
+safety_incidents,170,15,Fact / Event
+trailers,180,9,Dimension
+trips,85410,12,Fact
+truck_utilization_metrics,3312,10,Supporting Aggregate
+trucks,120,11,Dimension

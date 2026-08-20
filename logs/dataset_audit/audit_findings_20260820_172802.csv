@@ -1,0 +1,16 @@
+severity,category,table,issue,evidence,recommendation
+HIGH,Missing Data,drivers,Missing values in termination_date,124 null values (82.67%).,"Determine whether missingness is expected, operationally meaningful, or requires transformation."
+MEDIUM,Column Quality,drivers,Low-cardinality column: cdl_class,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+LOW,Missing Data,fuel_purchases,Missing values in truck_id,"3,880 null values (1.98%).","Determine whether missingness is expected, operationally meaningful, or requires transformation."
+LOW,Missing Data,fuel_purchases,Missing values in driver_id,"3,988 null values (2.03%).","Determine whether missingness is expected, operationally meaningful, or requires transformation."
+MEDIUM,Column Quality,loads,Low-cardinality column: load_status,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+LOW,Missing Data,safety_incidents,Missing values in truck_id,1 null values (0.59%).,"Determine whether missingness is expected, operationally meaningful, or requires transformation."
+LOW,Missing Data,safety_incidents,Missing values in driver_id,1 null values (0.59%).,"Determine whether missingness is expected, operationally meaningful, or requires transformation."
+MEDIUM,Column Quality,trailers,Low-cardinality column: length_feet,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+MEDIUM,Column Quality,trailers,Low-cardinality column: status,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+LOW,Missing Data,trips,Missing values in driver_id,"1,714 null values (2.01%).","Determine whether missingness is expected, operationally meaningful, or requires transformation."
+LOW,Missing Data,trips,Missing values in truck_id,"1,672 null values (1.96%).","Determine whether missingness is expected, operationally meaningful, or requires transformation."
+LOW,Missing Data,trips,Missing values in trailer_id,"1,680 null values (1.97%).","Determine whether missingness is expected, operationally meaningful, or requires transformation."
+MEDIUM,Column Quality,trips,Low-cardinality column: trip_status,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+MEDIUM,Column Quality,trucks,Low-cardinality column: fuel_type,Only 1 unique non-null value(s).,Validate whether the column provides analytical value.
+MEDIUM,Numeric Quality,facilities,Negative values in longitude,50 negative values detected.,Validate whether negative values are business-valid or indicate data-quality issues.

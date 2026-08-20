@@ -1,0 +1,105 @@
+PROJECT 2 - DATASET AUDIT FINDINGS
+============================================================
+
+Audit timestamp: 20260820_172802
+
+FINDINGS SUMMARY
+----------------------------------------
+CRITICAL: 0
+HIGH: 1
+MEDIUM: 7
+LOW: 7
+
+DETAILED FINDINGS
+============================================================
+
+1. [HIGH] Missing Data
+Table: drivers
+Issue: Missing values in termination_date
+Evidence: 124 null values (82.67%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+2. [MEDIUM] Column Quality
+Table: drivers
+Issue: Low-cardinality column: cdl_class
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+3. [LOW] Missing Data
+Table: fuel_purchases
+Issue: Missing values in truck_id
+Evidence: 3,880 null values (1.98%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+4. [LOW] Missing Data
+Table: fuel_purchases
+Issue: Missing values in driver_id
+Evidence: 3,988 null values (2.03%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+5. [MEDIUM] Column Quality
+Table: loads
+Issue: Low-cardinality column: load_status
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+6. [LOW] Missing Data
+Table: safety_incidents
+Issue: Missing values in truck_id
+Evidence: 1 null values (0.59%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+7. [LOW] Missing Data
+Table: safety_incidents
+Issue: Missing values in driver_id
+Evidence: 1 null values (0.59%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+8. [MEDIUM] Column Quality
+Table: trailers
+Issue: Low-cardinality column: length_feet
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+9. [MEDIUM] Column Quality
+Table: trailers
+Issue: Low-cardinality column: status
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+10. [LOW] Missing Data
+Table: trips
+Issue: Missing values in driver_id
+Evidence: 1,714 null values (2.01%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+11. [LOW] Missing Data
+Table: trips
+Issue: Missing values in truck_id
+Evidence: 1,672 null values (1.96%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+12. [LOW] Missing Data
+Table: trips
+Issue: Missing values in trailer_id
+Evidence: 1,680 null values (1.97%).
+Recommendation: Determine whether missingness is expected, operationally meaningful, or requires transformation.
+
+13. [MEDIUM] Column Quality
+Table: trips
+Issue: Low-cardinality column: trip_status
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+14. [MEDIUM] Column Quality
+Table: trucks
+Issue: Low-cardinality column: fuel_type
+Evidence: Only 1 unique non-null value(s).
+Recommendation: Validate whether the column provides analytical value.
+
+15. [MEDIUM] Numeric Quality
+Table: facilities
+Issue: Negative values in longitude
+Evidence: 50 negative values detected.
+Recommendation: Validate whether negative values are business-valid or indicate data-quality issues.
+

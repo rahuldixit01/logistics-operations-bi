@@ -1,0 +1,28 @@
+PROJECT 2 - DATASET AUDIT RUN
+==================================================
+Start time: 2026-08-20 17:28:02.664905
+End time: 2026-08-20 17:28:08.146427
+Duration: 0:00:05.481522
+Project root: E:\Portfolio\logistics-operations-bi
+Raw directory: E:\Portfolio\logistics-operations-bi\data\raw
+CSV files discovered: 14
+Expected tables: 14
+Loaded tables: 14
+Missing expected tables: 0
+Unexpected tables: 0
+Schema file present: True
+
+RAW DATA STATUS
+Raw files were READ ONLY.
+No raw files were modified.
+
+AUDIT OUTPUTS
+- table_inventory_20260820_172802.csv
+- column_audit_20260820_172802.csv
+- duplicate_audit_20260820_172802.csv
+- primary_key_audit_20260820_172802.csv
+- date_audit_20260820_172802.csv
+- numeric_audit_20260820_172802.csv
+- categorical_audit_20260820_172802.csv
+- foreign_key_audit_20260820_172802.csv
+- table_classification_20260820_172802.csv
