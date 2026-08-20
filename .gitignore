@@ -1,0 +1,29 @@
+# =========================
+# Logistics Operations BI
+# =========================
+
+# Raw and processed data
+data/raw/
+data/processed/
+
+# Logs
+logs/*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code local settings
+.vscode/
