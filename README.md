@@ -501,7 +501,8 @@ logistics-operations-bi/
 │   ├── raw/                                   # Source dataset — intentionally excluded from Git
 │   │   ├── 14 raw source tables
 │   │   └── DATABASE_SCHEMA.txt
-│   ├── processed/                             # Local processed artifacts — intentionally excluded from Git
+│   ├── processed/                             # Local processed artifacts — intentionally excluded 
+|   |   |                                        from Git
 │   │   └── README.md
 │   └── reference/
 │       └── README.md
