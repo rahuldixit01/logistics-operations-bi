@@ -1,0 +1,9 @@
+Total Additional Charges YoY Display = 
+VAR Change = [Total Additional Charges YoY %]
+RETURN
+IF(
+    ISBLANK(Change),
+    BLANK(),
+    IF(Change >= 0, "▲ ", "▼ ")
+        & FORMAT(ABS(Change), "0.0%")
+)

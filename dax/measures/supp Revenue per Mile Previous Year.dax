@@ -1,0 +1,9 @@
+supp Revenue per Mile Previous Year = 
+CALCULATE(
+    [supp Revenue per Mile],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

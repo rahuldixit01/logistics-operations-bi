@@ -1,0 +1,9 @@
+P1 Active Fleet Count Previous Year = 
+CALCULATE(
+    [P1 Active Fleet Count],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

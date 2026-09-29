@@ -1,0 +1,5 @@
+Total Fuel Consumption YoY % = 
+DIVIDE(
+    [P1 Total Fuel Consumption] - [P1 Total Fuel Consumption Previous Year],
+    [P1 Total Fuel Consumption Previous Year]
+)

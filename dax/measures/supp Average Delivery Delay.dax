@@ -1,0 +1,19 @@
+supp Average Delivery Delay = 
+AVERAGEX(
+    FILTER(
+        stg_delivery_events,
+        stg_delivery_events[event_type] = "Delivery"
+            && NOT ISBLANK(stg_delivery_events[scheduled_datetime])
+            && NOT ISBLANK(stg_delivery_events[actual_datetime])
+            && DATEDIFF(
+                stg_delivery_events[scheduled_datetime],
+                stg_delivery_events[actual_datetime],
+                MINUTE
+            ) > 120
+    ),
+    DATEDIFF(
+        stg_delivery_events[scheduled_datetime],
+        stg_delivery_events[actual_datetime],
+        MINUTE
+    )
+)

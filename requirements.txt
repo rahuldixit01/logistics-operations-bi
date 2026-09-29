@@ -1,2 +1,7 @@
+# Logistics Operations BI
+# Python dependencies for dataset auditing, validation, KPI validation,
+# and supporting analytical notebooks.
+
 pandas
 numpy
+jupyter

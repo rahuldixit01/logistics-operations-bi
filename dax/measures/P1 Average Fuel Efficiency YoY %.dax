@@ -1,0 +1,5 @@
+P1 Average Fuel Efficiency YoY % = 
+DIVIDE(
+    [P1 Average Fuel Efficiency] - [P1 Average Fuel Efficiency Previous Year],
+    [P1 Average Fuel Efficiency Previous Year]
+)

@@ -1,0 +1,11 @@
+Cost Components =
+DATATABLE(
+    "Component", STRING,
+    {
+        {"Fuel Cost"},
+        {"Maintenance Cost"},
+        {"Accessorial Charges"},
+        {"Additional Charges"},
+        {"Fuel Surcharge"}
+    }
+)

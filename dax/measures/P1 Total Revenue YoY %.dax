@@ -1,0 +1,5 @@
+P1 Total Revenue YoY % = 
+DIVIDE(
+    [P1 Total Revenue] - [P1 Total Revenue Previous Year],
+    [P1 Total Revenue Previous Year]
+)

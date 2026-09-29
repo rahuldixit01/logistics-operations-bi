@@ -1,0 +1,9 @@
+P1 Completed Loads Previous Year = 
+CALCULATE(
+    [P1 Completed Loads],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

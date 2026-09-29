@@ -1,0 +1,5 @@
+Total Accessorial Charges YoY % = 
+DIVIDE(
+    [Total Accessorial Charges] - [Total Accessorial Charges Previous Year],
+    [Total Accessorial Charges Previous Year]
+)

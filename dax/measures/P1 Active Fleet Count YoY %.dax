@@ -1,0 +1,5 @@
+P1 Active Fleet Count YoY % = 
+DIVIDE(
+    [P1 Active Fleet Count] - [P1 Active Fleet Count Previous Year],
+    [P1 Active Fleet Count Previous Year]
+)

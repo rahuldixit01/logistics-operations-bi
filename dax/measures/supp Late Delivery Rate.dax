@@ -1,0 +1,12 @@
+supp Late Delivery Rate = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(stg_delivery_events),
+        stg_delivery_events[event_type] = "Delivery",
+        stg_delivery_events[on_time_flag] = FALSE()
+    ),
+    CALCULATE(
+        COUNTROWS(stg_delivery_events),
+        stg_delivery_events[event_type] = "Delivery"
+    )
+)

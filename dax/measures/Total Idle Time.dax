@@ -1,0 +1,2 @@
+Total Idle Time = 
+SUM(stg_trips[idle_time_hours])

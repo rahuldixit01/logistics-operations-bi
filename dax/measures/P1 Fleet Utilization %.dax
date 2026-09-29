@@ -1,0 +1,4 @@
+P1 Fleet Utilization % = 
+AVERAGE(
+    stg_truck_utilization_metrics[utilization_rate]
+)

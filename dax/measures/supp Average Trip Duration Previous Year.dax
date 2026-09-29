@@ -1,0 +1,9 @@
+supp Average Trip Duration Previous Year = 
+CALCULATE(
+    [supp Average Trip Duration],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

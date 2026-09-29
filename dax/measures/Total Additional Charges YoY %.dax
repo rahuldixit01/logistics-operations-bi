@@ -1,0 +1,5 @@
+Total Additional Charges YoY % = 
+DIVIDE(
+    [Total Additional Charges] - [Total Additional Charges Previous Year],
+    [Total Additional Charges Previous Year]
+)

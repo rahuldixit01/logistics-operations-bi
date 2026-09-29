@@ -1,0 +1,9 @@
+P1 On-Time Delivery Previous Year = 
+CALCULATE(
+    [P1 On-Time Delivery %],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

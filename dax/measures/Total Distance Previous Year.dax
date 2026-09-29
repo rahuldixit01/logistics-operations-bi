@@ -1,0 +1,9 @@
+Total Distance Previous Year = 
+CALCULATE(
+    [Total Distance],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

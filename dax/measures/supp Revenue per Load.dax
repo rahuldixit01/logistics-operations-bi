@@ -1,0 +1,5 @@
+supp Revenue per Load = 
+DIVIDE(
+    [P1 Total Revenue],
+    [P1 Completed Loads]
+)

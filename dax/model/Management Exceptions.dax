@@ -1,0 +1,15 @@
+Management Exceptions =
+DATATABLE(
+    "Area", STRING,
+    "Metric", STRING,
+    "Current Value", STRING,
+    "Dimension", STRING,
+    "Evidence", STRING,
+    {
+        {"Delivery", "Late Delivery Rate", "55.39%", "All deliveries", "More than half of deliveries are classified as late."},
+        {"Delivery", "Average Delivery Delay", "240.66 min", "All deliveries", "Average delivery delay is approximately 4 hours."},
+        {"Data Quality", "Pickup→Delivery Reversals", "486", "Delivery events", "486 event sequences show pickup-to-delivery reversals."},
+        {"Data Quality", "Missing Vehicle/Driver Assignment", "4,952", "Trips", "Trips missing driver, truck or trailer assignment."},
+        {"Driver Data", "NULL Termination Date", "124 / 150", "Drivers", "124 driver records have no termination date."}
+    }
+)

@@ -1,0 +1,2 @@
+Dashboard Viewed = 
+"VIEWED: " & FORMAT(NOW(), "dd MMM yyyy, HH:mm")

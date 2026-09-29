@@ -1,0 +1,9 @@
+Operating Cost Component Value = 
+SWITCH(
+    SELECTEDVALUE('Cost Components'[Component]),
+    "Fuel Cost", [P1 Total Fuel Cost],
+    "Maintenance Cost", [supp Total Maintenance Cost],
+    "Accessorial Charges", [Total Accessorial Charges],
+    "Additional Charges", [Total Additional Charges],
+    "Fuel Surcharge", [Total Fuel Surcharge]
+)

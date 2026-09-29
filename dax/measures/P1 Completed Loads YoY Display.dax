@@ -1,0 +1,11 @@
+P1 Completed Loads YoY Display = 
+VAR ChangePct = [P1 Completed Loads YoY %]
+VAR Arrow =
+    SWITCH(
+        TRUE(),
+        ChangePct > 0, "▲",
+        ChangePct < 0, "▼",
+        "→"
+    )
+RETURN
+    Arrow & " " & FORMAT(ChangePct, "0.0%")

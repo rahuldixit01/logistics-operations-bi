@@ -1,0 +1,8 @@
+supp Average Trip Duration = 
+DIVIDE(
+    CALCULATE(
+        [Total Trip Duration],
+        stg_trips[trip_status] = "Completed"
+    ),
+    [P1 Completed Trips]
+)

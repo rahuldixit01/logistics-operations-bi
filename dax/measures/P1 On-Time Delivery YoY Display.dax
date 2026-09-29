@@ -1,0 +1,15 @@
+P1 On-Time Delivery YoY Display = 
+VAR Difference =
+    [P1 On-Time Delivery %]
+        - [P1 On-Time Delivery Previous Year]
+VAR RoundedDifference =
+    ROUND(Difference * 100, 1)
+VAR Arrow =
+    SWITCH(
+        TRUE(),
+        RoundedDifference > 0, "▲",
+        RoundedDifference < 0, "▼",
+        "⟶"
+    )
+RETURN
+    Arrow & " " & FORMAT(RoundedDifference, "0.0") & " pp"

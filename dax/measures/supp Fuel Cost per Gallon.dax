@@ -1,0 +1,5 @@
+supp Fuel Cost per Gallon = 
+DIVIDE(
+    [P1 Total Fuel Cost],
+    [P1 Total Fuel Consumption]
+)

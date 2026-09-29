@@ -1,0 +1,9 @@
+P1 Total Revenue Previous Year = 
+CALCULATE(
+    [P1 Total Revenue],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

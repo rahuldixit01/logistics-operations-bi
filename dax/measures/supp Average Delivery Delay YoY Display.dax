@@ -1,0 +1,9 @@
+supp Average Delivery Delay YoY Display = 
+VAR Change = [supp Average Delivery Delay YoY %]
+RETURN
+IF(
+    ISBLANK(Change),
+    BLANK(),
+    IF(Change >= 0, "▲ ", "▼ ")
+        & FORMAT(ABS(Change), "0.0%")
+)

@@ -1,0 +1,5 @@
+supp Revenue per Load YoY % = 
+DIVIDE(
+    [supp Revenue per Load] - [supp Revenue per Load Previous Year],
+    [supp Revenue per Load Previous Year]
+)

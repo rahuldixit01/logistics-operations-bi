@@ -1,0 +1,5 @@
+supp Revenue per Trip YoY % = 
+DIVIDE(
+    [supp Revenue per Trip] - [supp Revenue per Trip Previous Year],
+    [supp Revenue per Trip Previous Year]
+)

@@ -1,0 +1,2 @@
+Total Fuel Used = 
+SUM(stg_trips[fuel_gallons_used])

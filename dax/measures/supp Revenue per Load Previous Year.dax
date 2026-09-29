@@ -1,0 +1,9 @@
+supp Revenue per Load Previous Year = 
+CALCULATE(
+    [supp Revenue per Load],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

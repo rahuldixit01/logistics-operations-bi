@@ -1,0 +1,5 @@
+P1 Completed Trips YoY % = 
+DIVIDE(
+    [P1 Completed Trips] - [P1 Completed Trips Previous Year],
+    [P1 Completed Trips Previous Year]
+)

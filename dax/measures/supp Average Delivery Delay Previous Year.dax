@@ -1,0 +1,9 @@
+supp Average Delivery Delay Previous Year = 
+CALCULATE(
+    [supp Average Delivery Delay],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

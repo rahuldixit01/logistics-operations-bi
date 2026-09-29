@@ -1,0 +1,5 @@
+supp Average Delivery Delay YoY % = 
+DIVIDE(
+    [supp Average Delivery Delay] - [supp Average Delivery Delay Previous Year],
+    [supp Average Delivery Delay Previous Year]
+)

@@ -1,0 +1,9 @@
+supp Revenue per Mile YoY Display = 
+VAR Change = [supp Revenue per Mile YoY %]
+RETURN
+IF(
+    ISBLANK(Change),
+    BLANK(),
+    IF(Change >= 0, "▲ ", "▼ ")
+        & FORMAT(ABS(Change), "0.0%")
+)

@@ -1,0 +1,9 @@
+supp Revenue per Trip Previous Year = 
+CALCULATE(
+    [supp Revenue per Trip],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

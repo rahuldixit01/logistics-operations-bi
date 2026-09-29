@@ -1,0 +1,9 @@
+supp Average Idle Time per Trip Previous Year = 
+CALCULATE(
+    [supp Average Idle Time per Trip],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

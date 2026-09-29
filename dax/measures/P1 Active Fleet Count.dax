@@ -1,0 +1,5 @@
+P1 Active Fleet Count = 
+CALCULATE(
+    DISTINCTCOUNT(stg_trucks[truck_id]),
+    stg_trucks[status] = "Active"
+)

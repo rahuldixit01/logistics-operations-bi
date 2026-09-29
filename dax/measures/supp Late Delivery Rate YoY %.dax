@@ -1,0 +1,5 @@
+supp Late Delivery Rate YoY % = 
+DIVIDE(
+    [supp Late Delivery Rate] - [supp Late Delivery Rate Previous Year],
+    [supp Late Delivery Rate Previous Year]
+)

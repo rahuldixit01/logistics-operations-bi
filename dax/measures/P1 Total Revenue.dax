@@ -1,0 +1,5 @@
+P1 Total Revenue = 
+CALCULATE(
+    SUM(stg_loads[revenue]),
+    stg_loads[load_status] = "Completed"
+)

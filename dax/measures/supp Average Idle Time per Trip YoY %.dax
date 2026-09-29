@@ -1,0 +1,6 @@
+supp Average Idle Time per Trip YoY % = 
+DIVIDE(
+    [supp Average Idle Time per Trip]
+        - [supp Average Idle Time per Trip Previous Year],
+    [supp Average Idle Time per Trip Previous Year]
+)

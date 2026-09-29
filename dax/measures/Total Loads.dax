@@ -1,0 +1,1 @@
+Total Loads = COUNTROWS(stg_loads)

@@ -1,0 +1,301 @@
+======================================================================
+STAGE 3.5 — KPI VALIDATION PROJECT RUN
+======================================================================
+Run ID                  : 20260831_193839
+Run Timestamp           : 2026-08-31 19:38:39.032650
+Stage                   : Stage 3.5 — KPI Validation
+Notebook                : kpi_validation.ipynb
+Status                  : COMPLETED KPI VALIDATION CYCLE
+
+----------------------------------------------------------------------
+KPI VALIDATED
+----------------------------------------------------------------------
+KPI                     : Completed Loads
+Source Table            : loads
+Source File             : loads.csv
+Source Grain            : One row per load_id
+KPI Grain               : Load
+Time Logic              : load_date
+
+----------------------------------------------------------------------
+VALIDATION RESULT
+----------------------------------------------------------------------
+Independent Baseline   : 85,410
+Reconciliation Difference : 0
+Technical Validation   : PASS
+Final Status            : APPROVED
+
+----------------------------------------------------------------------
+BUSINESS DEFINITION
+----------------------------------------------------------------------
+Number of distinct loads with load_status = 'Completed'.
+
+----------------------------------------------------------------------
+LIMITATION
+----------------------------------------------------------------------
+No material limitation identified for the basic completed-load count within the validated 2022-2024 load population.
+
+----------------------------------------------------------------------
+DECISION RATIONALE
+----------------------------------------------------------------------
+Completed Loads satisfies the validated grain, population, time-logic, calculation, exception, and reconciliation requirements. The independent KPI calculation produces 85,410 completed loads with zero reconciliation difference.
+
+======================================================================
+END OF KPI VALIDATION RUN RECORD
+======================================================================
+
+
+======================================================================
+TOTAL REVENUE — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Total Revenue
+Source Table                : loads
+Source File                 : loads.csv
+Source Grain                : One row per load_id
+KPI Grain                   : Load
+Business Definition         : Sum of revenue for completed loads.
+Time Logic                  : load_date
+Independent Baseline        : 262,525,800.29
+Reconciliation Difference   : 0
+Technical Validation        : PASS
+Final Status                : APPROVED
+Limitation                  : No material limitation identified for the basic Total Revenue calculation within the validated 2022-2024 completed-load population.
+Decision Rationale          : Total Revenue satisfies the validated load grain, revenue completeness, completed-load population, time-logic, exception, duplicate-record, and load-to-trip reconciliation requirements. The independent KPI calculation produces 262,525,800.29 across 85,410 unique completed loads with complete revenue coverage and zero population reconciliation differences. The KPI is therefore reliable for total revenue analysis within the validated 2022-2024 completed-load population.
+======================================================================
+
+======================================================================
+ON-TIME DELIVERY % — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : On-Time Delivery %
+Source Table                : delivery_events
+Source File                 : delivery_events.csv
+Source Grain                : One row per delivery event
+KPI Grain                   : Delivery Event
+Event Type                  : Delivery
+Business Definition         : Percentage of Delivery events classified as On-Time using the validated source on_time_flag.
+Time Logic                  : scheduled_datetime vs actual_datetime
+Independent Baseline        : 44.61%
+Reconciliation Difference   : 0
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : The source on_time_flag is not equivalent to strict actual_datetime <= scheduled_datetime classification. The source flag is reproduced exactly by the observed ±120-minute timestamp rule. However, the observed ±120-minute tolerance represents technical source-field behavior and is not independently established as a business-approved delivery tolerance.
+Decision Rationale          : On-Time Delivery % satisfies the validated Delivery-event grain, event-type population, identifier completeness, timestamp completeness, and calculation requirements. The source on_time_flag population contains 38,102 On-Time and 47,308 Late Delivery events, producing an On-Time Delivery rate of 44.61%. Independent testing reproduces the source flag exactly using the observed ±120-minute rule, with 85,410 matching records and zero mismatches. The KPI is therefore technically reproducible using the source field, while final analytical use must retain the documented business-definition limitation.
+======================================================================
+
+======================================================================
+COMPLETED TRIPS — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Completed Trips
+Source Table                : trips
+Source File                 : trips.csv
+Source Grain                : One row per trip_id
+KPI Grain                   : Trip
+Business Definition         : Number of distinct trips with trip_status = 'Completed'.
+Time Logic                  : dispatch_date
+Independent Baseline        : 85410
+Reconciliation Difference   : 0
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : 5.80% of completed trips lack at least one driver/truck/trailer assignment, limiting dimensional attribution. In addition, 486 completed trips (0.569%) contain Delivery actual_datetime values earlier than Pickup actual_datetime.
+Decision Rationale          : Completed Trips satisfies the validated trip grain, population, dispatch-date coverage, trip-to-load relationship, calculation, identifier, and duplicate-record requirements. The independent KPI calculation produces 85,410 completed trips with zero reconciliation difference. The KPI is reliable for total trip-volume analysis, while driver/truck/trailer attribution and analyses relying on pickup-to-delivery chronology must account for the documented limitations.
+======================================================================
+
+
+======================================================================
+FLEET UTILIZATION % — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Fleet Utilization %
+Source Table                : truck_utilization_metrics
+Source File                 : truck_utilization_metrics.csv
+Source Grain                : One row per truck-month
+KPI Grain                   : Truck-Month
+Business Definition         : Fleet utilization based on the source-defined utilization_rate metric at the truck-month grain.
+Time Logic                  : month
+Independent Baseline        : Source-defined metric
+Reconciliation Difference   : N/A
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : The supplied truck-month dataset does not provide an explicitly documented utilization formula that can be independently reproduced from the available component fields. In addition, 436 truck-month records (13.16%) contain utilization_rate values above 100%, with a maximum observed value of 148.40%. These values are retained as observed source values and are not capped or transformed.
+Decision Rationale          : Fleet Utilization % satisfies the validated truck-month grain, identifier integrity, time coverage, field completeness, range validation, and truck-master reconciliation requirements. The utilization_rate field is complete across 3,312 unique truck-month records, with no NULL values, duplicate truck-month keys, or orphan truck IDs. Independent testing did not establish a reproducible utilization formula from the available component fields. Therefore, the KPI is approved for analytical use as a source-defined metric, with the documented limitation that its underlying methodology is not independently established. Values above 100% must be interpreted according to the source metric's business methodology and must not be automatically treated as data errors.
+======================================================================
+
+
+======================================================================
+ACTIVE FLEET COUNT — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 20:52:06.218153
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Active Fleet Count
+Source Table                : trucks
+Source File                 : trucks.csv
+Source Grain                : One row per truck_id
+KPI Grain                   : Truck
+Business Definition         : Count of distinct trucks with status = 'Active' in the current truck master.
+Time Logic                  : Current truck-master status
+Independent Baseline        : 92
+Reconciliation Difference   : 0
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : Historical Active/Inactive/Maintenance status transitions cannot be independently reconstructed from the supplied source fields. Therefore, the KPI should not be interpreted as a historically reconstructed monthly Active Fleet Count.
+Decision Rationale          : Active Fleet Count satisfies the validated truck grain, identifier integrity, status completeness, historical activity, utilization coverage, calculation, and source-to-independent reconciliation requirements. The independent KPI calculation produces 92 distinct Active trucks with zero reconciliation difference. All current Active trucks have observable trip activity during the validated 2022-2024 period and are represented in the utilization dataset. The KPI is therefore reliable for current Active Fleet population analysis. Historical fleet-status transitions remain a documented limitation and are not reconstructed from operational activity.
+======================================================================
+
+======================================================================
+TOTAL FUEL CONSUMPTION — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Total Fuel Consumption
+Source Table                : fuel_purchases
+Source File                 : fuel_purchases.csv
+Source Grain                : One row per fuel purchase
+KPI Grain                   : Fuel Purchase
+Business Definition         : Total gallons purchased within the
+                              validated 2022-2024 purchase_date
+                              analytical period.
+Time Logic                  : purchase_date
+Independent Baseline        : 24,493,560.80 gallons
+Reconciliation Difference   : 0.00 gallons
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : 3,880 fuel purchase records contain
+                              missing truck_id values, representing
+                              1.98% of the fuel-purchase population.
+                              This limits truck-level fuel attribution
+                              but does not prevent calculation of the
+                              overall fuel-volume KPI. In addition,
+                              8,471 completed trips have no corresponding
+                              fuel purchase record; this does not
+                              invalidate the KPI because the KPI
+                              population is defined by fuel purchases.
+Decision Rationale          : Total Fuel Consumption satisfies the
+                              validated fuel-purchase grain, identifier
+                              integrity, fuel volume completeness,
+                              purchase-date coverage, completed-trip
+                              linkage, transaction consistency, and
+                              calculation requirements. The independent
+                              KPI calculation produces 24,493,560.80
+                              gallons for the validated 2022-2024
+                              purchase_date period and reconciles exactly
+                              with the source-defined KPI population,
+                              with zero difference. All fuel purchase
+                              records are linked to Completed trips,
+                              and gallons are complete and positive.
+                              The KPI is therefore reliable for overall
+                              fuel-consumption analysis. The documented
+                              missing truck_id values remain a limitation
+                              for truck-level fuel attribution and must
+                              be retained in the final analytical
+                              documentation.
+======================================================================
+
+======================================================================
+AVERAGE FUEL EFFICIENCY — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Average Fuel Efficiency
+Source Table                : truck_utilization_metrics
+Source File                 : truck_utilization_metrics.csv
+Source Grain                : One row per truck-month
+KPI Grain                   : Truck-Month
+Business Definition         : Source-defined average_mpg value at the truck-month grain.
+Time Logic                  : month
+Independent Baseline        : Source-defined metric
+Reconciliation Difference   : N/A
+Technical Validation        : PASS
+Final Status                : APPROVED WITH LIMITATION
+Limitation                  : The supplied source data does not provide an explicit documented formula for average_mpg. Independent testing using total_miles / fuel_gallons evaluated all 3,312 truck-month records but did not sufficiently reproduce the source metric. The source average_mpg mean is 6.5010 MPG, while the independently calculated mean is 5.0957 MPG, with a mean absolute difference of 1.5103 MPG.
+Decision Rationale          : Average Fuel Efficiency satisfies the validated truck-month grain, identifier integrity, time coverage, field completeness, and source-metric range requirements. The average_mpg field is complete across 3,312 unique truck-month records, with no NULL, zero, or negative values. All source truck-month records have corresponding fuel truck-month populations for independent methodology testing. However, the tested total_miles / fuel_gallons relationship does not sufficiently reproduce the source average_mpg metric. Therefore, the KPI is approved for analytical use as a source-defined metric, with the documented limitation that its underlying methodology is not independently established from the supplied component fields. The source average_mpg values must not be replaced by the independent calculation.
+======================================================================
+
+======================================================================
+FUEL COST — CONTROLLED VALIDATION RUN RECORD
+======================================================================
+
+Run ID                      : 20260831_193839
+Validation Date             : 2026-08-31 19:38:39.032650
+
+Stage                       : Stage 3.5 — KPI Validation
+KPI                         : Fuel Cost
+
+Source Table                : fuel_purchases
+Source File                 : fuel_purchases.csv
+Source Grain                : One row per fuel purchase
+KPI Grain                   : Fuel Purchase
+
+Business Definition         : Total fuel cost incurred within the
+                              validated 2022-2024 purchase_date
+                              analytical period.
+
+Time Logic                  : purchase_date
+
+Validated Analytical Period : 2022-01-01 to 2024-12-31
+
+Source Population           : 196,442 fuel purchase records
+Validated KPI Population    : 196,241 fuel purchase records
+
+Distinct fuel_purchase_id   : 196,241
+
+Independent Baseline        : 95,499,723.14
+
+Reconciliation Difference   : 0.00
+
+Technical Validation        : PASS
+
+Final Status                : APPROVED WITH LIMITATION
+
+Limitation                  : 3,880 fuel purchase records contain
+                              missing truck_id values, representing
+                              1.98% of the fuel-purchase population.
+                              This limits truck-level Fuel Cost
+                              attribution but does not prevent
+                              calculation of the overall Fuel Cost KPI.
+
+Decision Rationale          : Fuel Cost satisfies the validated
+                              fuel-purchase grain, identifier
+                              integrity, cost completeness,
+                              purchase-date coverage,
+                              completed-trip linkage, transaction
+                              cost consistency, calculation, and
+                              source-to-independent reconciliation
+                              requirements.
+
+                              The independent KPI calculation
+                              produces 95,499,723.14 for the
+                              validated 2022-2024 purchase_date
+                              period and reconciles exactly with
+                              the source-defined KPI population,
+                              with zero difference.
+
+                              All fuel purchase records contain
+                              valid positive total_cost values, and
+                              total_cost reconciles to
+                              gallons × price_per_gallon within the
+                              $0.01 tolerance.
+
+                              The KPI is therefore reliable for
+                              overall Fuel Cost analysis.
+
+                              The documented missing truck_id
+                              values remain a limitation for
+                              truck-level Fuel Cost attribution and
+                              must be retained in the final
+                              analytical documentation.
+
+======================================================================

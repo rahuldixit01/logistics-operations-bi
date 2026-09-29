@@ -1,0 +1,2 @@
+Total Accessorial Charges = 
+SUM(stg_loads[accessorial_charges])

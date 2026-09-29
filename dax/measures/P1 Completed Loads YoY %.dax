@@ -1,0 +1,5 @@
+P1 Completed Loads YoY % = 
+DIVIDE(
+    [P1 Completed Loads] - [P1 Completed Loads Previous Year],
+    [P1 Completed Loads Previous Year]
+)

@@ -1,0 +1,18 @@
+supp Fuel Cost per Load YoY Display = 
+VAR Difference =
+    [supp Fuel Cost per Load YoY %]
+VAR RoundedDifference =
+    ROUND(Difference * 100, 1)
+VAR Arrow =
+    SWITCH(
+        TRUE(),
+        RoundedDifference > 0, "▲",
+        RoundedDifference < 0, "▼",
+        "⟶"
+    )
+RETURN
+    IF(
+        ISBLANK(Difference),
+        BLANK(),
+        Arrow & " " & FORMAT(ABS(RoundedDifference), "0.0") & "%"
+    )

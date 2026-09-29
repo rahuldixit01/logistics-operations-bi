@@ -1,0 +1,14 @@
+supp Fuel Cost per Load YoY % = 
+VAR CurrentValue =
+    [supp Fuel Cost per Load]
+VAR PreviousValue =
+    [supp Fuel Cost per Load Previous Year]
+RETURN
+    IF(
+        ISBLANK(PreviousValue) || PreviousValue = 0,
+        BLANK(),
+        DIVIDE(
+            CurrentValue - PreviousValue,
+            PreviousValue
+        )
+    )

@@ -1,0 +1,9 @@
+P1 Total Fuel Consumption YoY Display = 
+VAR Change = [Total Fuel Consumption YoY %]
+RETURN
+IF(
+    ISBLANK(Change),
+    BLANK(),
+    IF(Change >= 0, "▲ ", "▼ ")
+        & FORMAT(ABS(Change), "0.0%")
+)

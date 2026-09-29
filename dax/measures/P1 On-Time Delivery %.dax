@@ -1,0 +1,12 @@
+P1 On-Time Delivery % = 
+DIVIDE(
+    CALCULATE(
+        DISTINCTCOUNT(stg_delivery_events[load_id]),
+        stg_delivery_events[event_type] = "Delivery",
+        stg_delivery_events[on_time_flag] = TRUE()
+    ),
+    CALCULATE(
+        DISTINCTCOUNT(stg_delivery_events[load_id]),
+        stg_delivery_events[event_type] = "Delivery"
+    )
+)

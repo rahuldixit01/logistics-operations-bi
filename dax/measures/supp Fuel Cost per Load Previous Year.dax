@@ -1,0 +1,9 @@
+supp Fuel Cost per Load Previous Year = 
+CALCULATE(
+    [supp Fuel Cost per Load],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

@@ -1,0 +1,5 @@
+supp Average Idle Time per Trip = 
+DIVIDE(
+    [Total Idle Time],
+    [P1 Completed Trips]
+)

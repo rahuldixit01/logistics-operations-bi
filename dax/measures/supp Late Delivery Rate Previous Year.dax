@@ -1,0 +1,9 @@
+supp Late Delivery Rate Previous Year = 
+CALCULATE(
+    [supp Late Delivery Rate],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

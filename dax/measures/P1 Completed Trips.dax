@@ -1,0 +1,5 @@
+P1 Completed Trips = 
+CALCULATE(
+    DISTINCTCOUNT(stg_trips[trip_id]),
+    stg_trips[trip_status] = "Completed"
+)

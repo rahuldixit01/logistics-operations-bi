@@ -1,0 +1,9 @@
+P1 Total Fuel Cost Previous Year = 
+CALCULATE(
+    [P1 Total Fuel Cost],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

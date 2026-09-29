@@ -1,0 +1,10 @@
+P1 On-Time Delivery YoY pp = 
+VAR Difference =
+    [P1 On-Time Delivery %]
+        - [P1 On-Time Delivery Previous Year]
+RETURN
+    IF(
+        ABS(Difference) < 0.000001,
+        0,
+        Difference
+    )

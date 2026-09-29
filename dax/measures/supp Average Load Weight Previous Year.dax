@@ -1,0 +1,9 @@
+supp Average Load Weight Previous Year = 
+CALCULATE(
+    [supp Average Load Weight],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

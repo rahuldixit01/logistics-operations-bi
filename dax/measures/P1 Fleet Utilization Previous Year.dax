@@ -1,0 +1,9 @@
+P1 Fleet Utilization Previous Year = 
+CALCULATE(
+    [P1 Fleet Utilization %],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

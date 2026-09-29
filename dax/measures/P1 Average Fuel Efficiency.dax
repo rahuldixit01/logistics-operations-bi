@@ -1,0 +1,2 @@
+P1 Average Fuel Efficiency = 
+AVERAGE(stg_truck_utilization_metrics[average_mpg])

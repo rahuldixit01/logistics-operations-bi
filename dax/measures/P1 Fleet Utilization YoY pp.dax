@@ -1,0 +1,10 @@
+P1 Fleet Utilization YoY pp = 
+VAR Difference =
+    [P1 Fleet Utilization %]
+        - [P1 Fleet Utilization Previous Year]
+RETURN
+    IF(
+        ABS(Difference) < 0.000001,
+        0,
+        Difference
+    )

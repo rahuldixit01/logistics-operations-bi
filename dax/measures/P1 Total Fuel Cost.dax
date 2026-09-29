@@ -1,0 +1,10 @@
+P1 Total Fuel Cost = 
+CALCULATE(
+    SUM(stg_fuel_purchases[total_cost]),
+    KEEPFILTERS(
+        stg_fuel_purchases[purchase_date] >= DATE(2022, 1, 1)
+    ),
+    KEEPFILTERS(
+        stg_fuel_purchases[purchase_date] < DATE(2025, 1, 1)
+    )
+)

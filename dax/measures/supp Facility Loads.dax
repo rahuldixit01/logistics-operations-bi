@@ -1,0 +1,21 @@
+supp Facility Loads = 
+VAR FacilityTrips =
+    CALCULATETABLE(
+        VALUES(stg_delivery_events[trip_id])
+    )
+VAR FacilityLoads =
+    CALCULATETABLE(
+        VALUES(stg_trips[load_id]),
+        TREATAS(
+            FacilityTrips,
+            stg_trips[trip_id]
+        )
+    )
+RETURN
+    CALCULATE(
+        [Total Loads],
+        TREATAS(
+            FacilityLoads,
+            stg_loads[load_id]
+        )
+    )

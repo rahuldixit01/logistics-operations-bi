@@ -1,0 +1,14 @@
+supp Average Load Weight YoY % = 
+VAR CurrentValue =
+    [supp Average Load Weight]
+VAR PreviousValue =
+    [supp Average Load Weight Previous Year]
+RETURN
+    IF(
+        ISBLANK(PreviousValue) || PreviousValue = 0,
+        BLANK(),
+        DIVIDE(
+            CurrentValue - PreviousValue,
+            PreviousValue
+        )
+    )

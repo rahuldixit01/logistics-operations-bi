@@ -1,0 +1,15 @@
+-- Base Calendar table
+Calendar =
+CALENDAR(
+    DATE(2022, 1, 1),
+    DATE(2024, 12, 31)
+)
+
+-- Calculated columns
+Year = YEAR('Calendar'[Date])
+
+Month Number = MONTH('Calendar'[Date])
+
+Month Name = FORMAT('Calendar'[Date], "MMM")
+
+Year-Month = FORMAT('Calendar'[Date], "YY-MM")

@@ -1,0 +1,5 @@
+P1 Total Fuel Cost YoY % = 
+DIVIDE(
+    [P1 Total Fuel Cost] - [P1 Total Fuel Cost Previous Year],
+    [P1 Total Fuel Cost Previous Year]
+)

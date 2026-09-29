@@ -1,0 +1,9 @@
+P1 Total Fuel Consumption Previous Year = 
+CALCULATE(
+    [P1 Total Fuel Consumption],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

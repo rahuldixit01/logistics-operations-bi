@@ -1,0 +1,9 @@
+Total Additional Charges Previous Year = 
+CALCULATE(
+    [Total Additional Charges],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

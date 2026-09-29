@@ -1,0 +1,5 @@
+P1 Completed Loads = 
+CALCULATE(
+    DISTINCTCOUNT(stg_loads[load_id]),
+    stg_loads[load_status] = "Completed"
+)

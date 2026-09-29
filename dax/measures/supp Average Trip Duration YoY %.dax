@@ -1,0 +1,14 @@
+supp Average Trip Duration YoY % = 
+VAR CurrentValue =
+    [supp Average Trip Duration]
+VAR PreviousValue =
+    [supp Average Trip Duration Previous Year]
+RETURN
+    IF(
+        ISBLANK(PreviousValue) || PreviousValue = 0,
+        BLANK(),
+        DIVIDE(
+            CurrentValue - PreviousValue,
+            PreviousValue
+        )
+    )

@@ -1,0 +1,2 @@
+Total Trip Duration = 
+SUM(stg_trips[actual_duration_hours])

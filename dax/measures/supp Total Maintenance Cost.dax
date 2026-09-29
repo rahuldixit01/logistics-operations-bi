@@ -1,0 +1,2 @@
+supp Total Maintenance Cost = 
+SUM(stg_maintenance_records[total_cost])

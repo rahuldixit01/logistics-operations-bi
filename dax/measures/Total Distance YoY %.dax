@@ -1,0 +1,14 @@
+Total Distance YoY % = 
+VAR CurrentValue =
+    [Total Distance]
+VAR PreviousValue =
+    [Total Distance Previous Year]
+RETURN
+    IF(
+        ISBLANK(PreviousValue) || PreviousValue = 0,
+        BLANK(),
+        DIVIDE(
+            CurrentValue - PreviousValue,
+            PreviousValue
+        )
+    )

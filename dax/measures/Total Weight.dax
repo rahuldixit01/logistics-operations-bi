@@ -1,0 +1,2 @@
+Total Weight = 
+SUM(stg_loads[weight_lbs])

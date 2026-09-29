@@ -1,0 +1,9 @@
+supp Revenue per Trip YoY Display = 
+VAR Change = [supp Revenue per Trip YoY %]
+RETURN
+IF(
+    ISBLANK(Change),
+    BLANK(),
+    IF(Change >= 0, "▲ ", "▼ ")
+        & FORMAT(ABS(Change), "0.0%")
+)

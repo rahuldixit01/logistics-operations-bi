@@ -1,0 +1,5 @@
+supp Revenue per Mile YoY % = 
+DIVIDE(
+    [supp Revenue per Mile] - [supp Revenue per Mile Previous Year],
+    [supp Revenue per Mile Previous Year]
+)

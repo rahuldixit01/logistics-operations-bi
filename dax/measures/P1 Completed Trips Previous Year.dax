@@ -1,0 +1,9 @@
+P1 Completed Trips Previous Year = 
+CALCULATE(
+    [P1 Completed Trips],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

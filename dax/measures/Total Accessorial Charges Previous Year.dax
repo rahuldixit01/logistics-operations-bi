@@ -1,0 +1,9 @@
+Total Accessorial Charges Previous Year = 
+CALCULATE(
+    [Total Accessorial Charges],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)

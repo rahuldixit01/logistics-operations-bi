@@ -1,0 +1,45 @@
+======================================================================
+STAGE 3.5 — KPI VALIDATION PROJECT RUN
+======================================================================
+Run ID                  : 20260831_191207
+Run Timestamp           : 2026-08-31 19:12:07.665318
+Stage                   : Stage 3.5 — KPI Validation
+Notebook                : kpi_validation.ipynb
+Status                  : COMPLETED KPI VALIDATION CYCLE
+
+----------------------------------------------------------------------
+KPI VALIDATED
+----------------------------------------------------------------------
+KPI                     : Completed Loads
+Source Table            : loads
+Source File             : loads.csv
+Source Grain            : One row per load_id
+KPI Grain               : Load
+Time Logic              : load_date
+
+----------------------------------------------------------------------
+VALIDATION RESULT
+----------------------------------------------------------------------
+Independent Baseline   : 85,410
+Reconciliation Difference : 0
+Technical Validation   : PASS
+Final Status            : APPROVED
+
+----------------------------------------------------------------------
+BUSINESS DEFINITION
+----------------------------------------------------------------------
+Number of distinct loads with load_status = 'Completed'.
+
+----------------------------------------------------------------------
+LIMITATION
+----------------------------------------------------------------------
+No material limitation identified for the basic completed-load count within the validated 2022-2024 load population.
+
+----------------------------------------------------------------------
+DECISION RATIONALE
+----------------------------------------------------------------------
+Completed Loads satisfies the validated grain, population, time-logic, calculation, exception, and reconciliation requirements. The independent KPI calculation produces 85,410 completed loads with zero reconciliation difference.
+
+======================================================================
+END OF KPI VALIDATION RUN RECORD
+======================================================================

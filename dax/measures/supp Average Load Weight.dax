@@ -1,0 +1,8 @@
+supp Average Load Weight = 
+DIVIDE(
+    CALCULATE(
+        [Total Weight],
+        stg_loads[load_status] = "Completed"
+    ),
+    [P1 Completed Loads]
+)

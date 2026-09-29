@@ -1,0 +1,9 @@
+P1 Average Fuel Efficiency Previous Year = 
+CALCULATE(
+    [P1 Average Fuel Efficiency],
+    DATEADD(
+        'Calendar'[Date],
+        -1,
+        YEAR
+    )
+)
