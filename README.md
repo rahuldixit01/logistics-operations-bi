@@ -498,10 +498,10 @@ logistics-operations-bi/
 │       └── kpi_validation.ipynb
 │
 ├── data/
-│   ├── raw/
+│   ├── raw/                                   # Source dataset — intentionally excluded from Git
 │   │   ├── 14 raw source tables
 │   │   └── DATABASE_SCHEMA.txt
-│   ├── processed/
+│   ├── processed/                             # Local processed artifacts — intentionally excluded from Git
 │   │   └── README.md
 │   └── reference/
 │       └── README.md
