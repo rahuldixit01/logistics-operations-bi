@@ -738,4 +738,4 @@ The result is a complete **Data Analytics / Business Intelligence case study** i
 **Rahul Dixit**  
 Data Analytics | Business Intelligence | Power BI
 
-[LinkedIn](www.linkedin.com/in/rahul-dixit-04888b20a) · [GitHub](https://github.com/rahuldixit01/logistics-operations-bi)
+[LinkedIn](https://www.linkedin.com/in/rahul-dixit-04888b20a/) · [GitHub](https://github.com/rahuldixit01/logistics-operations-bi)
